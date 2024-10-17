@@ -1,0 +1,62 @@
+Struktur Mind Map:
+        1. Sistem Utama
+                a. Sub Sistem Perangkat IoT
+                        # Sensor Lingkungan
+                        # Suhu
+                        # Kelembaban
+                        # Intensitas Cahaya
+                        # Gambar Lingkungan
+                b. Pengisian Daya
+                        # Solar Panel
+        2. Sub Sistem Komunikasi
+                a. Pengiriman Data Sensor
+                        # Suhu
+                        # Kelembaban
+                        # Intensitas Cahaya
+                        # Gambar
+                b. Pengiriman Data Lainnya
+                        # Nomor Pengenal Perangkat
+                        # Status Perangkat Aktif/Tidak Aktif
+                c. Penerimaan Perintah
+                        # Aktivasi Sensor
+                d. Protokol Komunikasi
+                        # MQTT
+                        # HTTP
+        3. Sub Sistem Back End
+                a. Penyimpanan Data Sensor
+                        # Suhu
+                        # Kelembaban
+                        # Intensitas Cahaya
+                        # Gambar
+                b. Penyimpanan Data Tambahan
+                        # Nomor Pengenal Perangkat
+                        # Status Perangkat
+                c. Penerimaan Perintah dari Front End
+                        # Aktivasi Sensor
+                d. Pengolahan dan Pengiriman Data ke Front End
+                        # Suhu
+                        # Kelembaban
+                        # Intensitas Cahaya
+                        # Gambar
+                e. Penyimpanan
+                        # Object Storage (untuk gambar)
+                        # Database Postgres (untuk data)
+        4. Sub Sistem Front End
+                a. Tampilan Data Sensor
+                        # Suhu
+                        # Kelembaban
+                        # Intensitas Cahaya
+                        # Gambar
+                b. Grafik Data Berdasarkan:
+                        # Waktu (Harian, Mingguan)
+                        # Lokasi Perangkat IoT
+                        # Identitas Perangkat IoT
+                c. Notifikasi
+                        # Status Perangkat Aktif/Tidak Aktif
+                        # Data Baru dari Sensor
+                d. Pengaturan Perangkat
+                        # Mengatur Jadwal Aktivasi Sensor
+                        # Menambah/Mengedit/Menghapus Perangkat IoT
+                        # Mengelola Foto Serangga
+                e. Pengaturan Hak Akses
+                        # Role Based Access Control (RBAC)

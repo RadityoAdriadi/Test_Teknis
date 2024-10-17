@@ -1,0 +1,100 @@
+##EPIC 1: Sub Sistem Perangkat IoT
+
+[User Story 1: Sensor Lingkungan]
+
+@Sebagai sistem IoT, saya ingin mendeteksi suhu, kelembaban, dan intensitas cahaya di lingkungan, 
+sehingga saya bisa mengirim data ke sistem pusat untuk analisis lebih lanjut.
+
+Acceptance Criteria:
+# Sistem dapat membaca data dari sensor suhu.
+# Sistem dapat membaca data dari sensor kelembaban.
+# Sistem dapat membaca data dari sensor intensitas cahaya.
+# Data yang terdeteksi oleh sensor harus disimpan dalam memori sementara.
+
+[User Story 2: Pengisian Daya dari Solar Panel]
+
+@Sebagai sistem IoT, saya ingin mengisi daya baterai menggunakan solar panel, 
+sehingga saya bisa tetap beroperasi tanpa intervensi manual.
+
+Acceptance Criteria:
+#Sistem mulai mengisi daya ketika baterai mencapai tingkat daya rendah.
+#Sistem menggunakan solar panel sebagai sumber daya utama untuk pengisian.
+#Status pengisian daya ditampilkan pada dashboard pemantauan perangkat.
+
+##EPIC 1: Sub Sistem Komunikasi
+
+[User Story 3: Pengiriman Data Suhu]
+
+@Sebagai sistem IoT, saya ingin mengirim data suhu lingkungan ke Sub Sistem Back End, 
+sehingga data tersebut dapat dianalisis lebih lanjut.
+
+Acceptance Criteria:
+#Data suhu harus dikirim melalui protokol yang ditentukan (MQTT/HTTP).
+#Data dikirim secara otomatis setiap interval waktu yang telah ditentukan.
+#Sistem akan menampilkan status "berhasil dikirim" setelah data berhasil diteruskan.
+
+[User Story 4: Penerimaan Perintah untuk Aktivasi Sensor]
+
+@Sebagai sistem IoT, saya ingin menerima perintah dari Sub Sistem Back End untuk mengaktifkan sensor, 
+sehingga saya dapat mengumpulkan data sesuai permintaan.
+
+Acceptance Criteria:
+#Sistem harus mampu menerima perintah aktivasi dari back end.
+#Sistem menyalakan sensor yang sesuai setelah menerima perintah.
+#Status aktivasi sensor harus dikirim kembali sebagai konfirmasi.
+
+
+##EPIC 2: Sub Sistem Back End
+
+[User Story 5: Penyimpanan Data Sensor]
+
+@Sebagai sistem back end, saya ingin menyimpan data yang diterima dari Sub Sistem Perangkat IoT, 
+sehingga data dapat diakses dan dianalisis oleh pengguna.
+
+Acceptance Criteria:
+#Sistem menerima dan menyimpan data dari sensor suhu, kelembaban, intensitas cahaya, dan gambar.
+#Data yang diterima harus diverifikasi sebelum disimpan ke database.
+#Penyimpanan data dilakukan di database Postgres dan gambar di Object Storage.
+
+[User Story 6: Pengiriman Data ke Front End]
+
+@Sebagai sistem back end, saya ingin mengirim data dari sensor ke Sub Sistem Front End, 
+sehingga pengguna dapat melihat data di dashboard.
+
+Acceptance Criteria:
+#Sistem harus bisa mengirim data yang terolah ke front end dalam format yang sesuai.
+#Data harus diterima oleh front end dalam waktu yang ditentukan (misal, <2 detik setelah pengiriman).
+#Data mencakup nilai suhu, kelembaban, intensitas cahaya, dan gambar lingkungan.
+
+
+##EPIC 2: Sub Sistem Front End
+
+[User Story 7: Tampilan Data Sensor di Dashboard]
+
+@Sebagai pengguna, saya ingin melihat data sensor dari perangkat IoT pada dashboard, 
+sehingga saya bisa memantau kondisi lingkungan secara real-time.
+
+Acceptance Criteria:
+#Data yang ditampilkan mencakup suhu, kelembaban, dan intensitas cahaya.
+#Data diperbarui secara berkala sesuai interval pengiriman dari perangkat IoT.
+#Tampilan harus responsif dan menyesuaikan dengan ukuran layar.
+
+[User Story 8: Menampilkan Grafik Berdasarkan Waktu]
+
+@Sebagai pengguna, saya ingin melihat grafik data sensor berdasarkan jangka waktu tertentu, 
+sehingga saya dapat memantau tren kondisi lingkungan.
+
+Acceptance Criteria:
+#Pengguna dapat memilih filter waktu (harian, mingguan, bulanan).
+#Grafik harus menampilkan data suhu, kelembaban, dan intensitas cahaya sesuai filter waktu yang dipilih.
+#Grafik dapat diunduh dalam format yang didukung (misal: PDF, PNG).
+
+[User Story 9: Notifikasi Status Perangkat]
+
+@Sebagai pengguna, saya ingin menerima notifikasi ketika perangkat IoT tidak aktif, 
+sehingga saya dapat segera mengambil tindakan.
+
+Acceptance Criteria:
+#Sistem mengirimkan notifikasi ketika perangkat IoT tidak aktif lebih dari 10 menit.
+#Notifikasi muncul sebagai pesan pop-up di dashboard dan dikirim melalui email/SMS (jika diaktifkan).
+#Pengguna dapat melihat riwayat notifikasi untuk semua perangkat IoT yang terdaftar.
